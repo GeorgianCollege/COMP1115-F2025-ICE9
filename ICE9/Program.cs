@@ -49,7 +49,7 @@ namespace ICE9
                 AboutForm
             ];
 
-            Application.Run(new SelectionForm());
+            Application.Run(SplashForm);
         }
     }
 }
