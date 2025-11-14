@@ -31,6 +31,11 @@ namespace ICE9
         // Declaring Secondary Stat TextBox Array
         TextBox[] SecondaryStatTextBoxes;
 
+        string SelectedCareer;
+
+        string SelectedSpecies = "Human";
+
+
         /// <summary>
         /// The Constructor for SelectionForm
         /// </summary>
@@ -71,6 +76,8 @@ namespace ICE9
             {
                 ComboBox_Career.SelectedIndex = -1;
 
+                SelectedCareer = "Random";
+
                 foreach (TextBox stat in PrimaryStatTextBoxes)
                 {
                     stat.Text = Roll6d10DropLowest().ToString();
@@ -94,6 +101,8 @@ namespace ICE9
         {
             // If the ComboBox has been cleared, then return
             if (ComboBox_Career.SelectedIndex < 0) { return; }
+
+            SelectedCareer = ComboBox_Career.SelectedItem.ToString();
 
             for (int attribute = 0; attribute < PrimaryStatTextBoxes.Length; attribute++)
             {
@@ -178,8 +187,33 @@ namespace ICE9
 
         private void Button_Next_Click(object sender, EventArgs e)
         {
+            Settings.Default.AGL = TextBox_AGL.Text;
+            Settings.Default.STR = TextBox_STR.Text;
+            Settings.Default.VGR = TextBox_VGR.Text;
+            Settings.Default.PER = TextBox_PER.Text;
+            Settings.Default.INT = TextBox_INT.Text;
+            Settings.Default.WIL = TextBox_WIL.Text;
+            Settings.Default.Career = SelectedCareer;
+            Settings.Default.Species = SelectedSpecies;
+            Settings.Default.CharacterName = TextBox_Name.Text;
+
             Program.Forms[(int)FormType.Next].Show();
             Hide();
+        }
+
+        /// <summary>
+        /// This event handler updates the SelectedSpecies variable when a RadioButton is checked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_Species_CheckedChanged(object sender, EventArgs e)
+        {
+            // Ensure the sender is a RadioButton
+            var radioButton = sender as RadioButton;
+
+            // set the SelectedSpecies variable to the text of the selected RadioButton
+            SelectedSpecies = radioButton.Text;
+
         }
     }
 }
