@@ -64,6 +64,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "NextForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "NextForm";
             ResumeLayout(false);
         }

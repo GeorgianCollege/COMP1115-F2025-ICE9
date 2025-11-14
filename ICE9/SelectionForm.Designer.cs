@@ -59,7 +59,7 @@
             RadioButton_Robot = new RadioButton();
             RadioButton_Alien = new RadioButton();
             Button_Reset = new Button();
-            Button_Submit = new Button();
+            Button_Next = new Button();
             TextBox_Name = new TextBox();
             Panel_PrimaryAttributes.SuspendLayout();
             Panel_SecondaryAttributes.SuspendLayout();
@@ -440,19 +440,19 @@
             Button_Reset.UseVisualStyleBackColor = false;
             Button_Reset.Click += Button_Reset_Click;
             // 
-            // Button_Submit
+            // Button_Next
             // 
-            Button_Submit.BackColor = Color.ForestGreen;
-            Button_Submit.Font = new Font("Calibri", 12F);
-            Button_Submit.ForeColor = SystemColors.ButtonHighlight;
-            Button_Submit.Location = new Point(290, 333);
-            Button_Submit.Margin = new Padding(2, 1, 2, 1);
-            Button_Submit.Name = "Button_Submit";
-            Button_Submit.Size = new Size(92, 33);
-            Button_Submit.TabIndex = 21;
-            Button_Submit.Text = "Submit";
-            Button_Submit.UseVisualStyleBackColor = false;
-            Button_Submit.Click += Button_Submit_Click;
+            Button_Next.BackColor = SystemColors.Window;
+            Button_Next.Font = new Font("Calibri", 12F);
+            Button_Next.ForeColor = SystemColors.ControlText;
+            Button_Next.Location = new Point(290, 333);
+            Button_Next.Margin = new Padding(2, 1, 2, 1);
+            Button_Next.Name = "Button_Next";
+            Button_Next.Size = new Size(92, 33);
+            Button_Next.TabIndex = 21;
+            Button_Next.Text = "Next";
+            Button_Next.UseVisualStyleBackColor = false;
+            Button_Next.Click += Button_Next_Click;
             // 
             // TextBox_Name
             // 
@@ -467,14 +467,14 @@
             // 
             // SelectionForm
             // 
-            AcceptButton = Button_Submit;
+            AcceptButton = Button_Next;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(422, 404);
             Controls.Add(TextBox_Name);
             Controls.Add(Button_Reset);
             Controls.Add(Button_Random);
-            Controls.Add(Button_Submit);
+            Controls.Add(Button_Next);
             Controls.Add(GroupBox_Species);
             Controls.Add(CheckBox_ShowRandomButton);
             Controls.Add(Panel_SecondaryAttributes);
@@ -531,7 +531,7 @@
         private RadioButton RadioButton_Alien;
         private RadioButton RadioButton_Robot;
         private Button Button_Reset;
-        private Button Button_Submit;
+        private Button Button_Next;
         private TextBox TextBox_Name;
     }
 }

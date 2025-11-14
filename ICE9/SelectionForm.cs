@@ -170,10 +170,10 @@ namespace ICE9
 
         }
 
-        private void Button_Submit_Click(object sender, EventArgs e)
+        private void Button_Next_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-
+            Program.Forms[(int)FormType.Next].Show();
+            Hide();
         }
     }
 }
