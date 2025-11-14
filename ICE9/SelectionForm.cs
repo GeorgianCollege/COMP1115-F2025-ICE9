@@ -77,6 +77,8 @@ namespace ICE9
                 }
 
                 ComputeSecondaryAttributes();
+
+                Button_Next.Enabled = true;
             }
 
         }
@@ -97,6 +99,8 @@ namespace ICE9
             {
                 PrimaryStatTextBoxes[attribute].Text = CareerStats[ComboBox_Career.SelectedIndex][attribute].ToString();
             }
+
+            Button_Next.Enabled = true;
 
             ComputeSecondaryAttributes();
         }
@@ -154,6 +158,8 @@ namespace ICE9
                 {
                     stat.Text = string.Empty;
                 }
+
+                Button_Next.Enabled = false;
             }
         }
 

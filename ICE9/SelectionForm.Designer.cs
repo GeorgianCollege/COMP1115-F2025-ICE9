@@ -443,6 +443,7 @@
             // Button_Next
             // 
             Button_Next.BackColor = SystemColors.Window;
+            Button_Next.Enabled = false;
             Button_Next.Font = new Font("Calibri", 12F);
             Button_Next.ForeColor = SystemColors.ControlText;
             Button_Next.Location = new Point(290, 333);
