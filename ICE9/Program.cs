@@ -12,9 +12,17 @@ namespace ICE9
 
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static SplashForm SplashForm;
+        public static SelectionForm SelectionForm;
+        public static NextForm NextForm;
+        public static FinalForm FinalForm;
+        public static AboutForm AboutForm;
+
+        public static List<Form> Forms;
+
+        public static bool IsExiting = false;
+
+
         [STAThread]
         static void Main()
         {
